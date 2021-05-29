@@ -13,7 +13,7 @@ function Movies(movieName){
 let movie = ["atonement.jpg", 
 "Bucket-List.jpg", 
 "Devil.jpg", 
-"Little-Women.jpg", 
+"Little-Woman.jpg", 
 "Mystic-River.jpg",
 "Nocturnal-Animals.jpg", 
 "Pancreas.jpg", 
@@ -33,7 +33,6 @@ let imgElement = document.getElementById('movieImg')
 function renderMovie(){
     let movieIndex = randomMovie();
     imgElement.setAttribute('src', moviesArr[movieIndex].path);
-    console.log( moviesArr[movieIndex].path);
 }
 
 renderMovie();
@@ -67,5 +66,37 @@ let genreIndex = event.target.genre.value;
 let recommendationIndex = document.getElementById('recommendation').value;
 
 new MoviesLocally (filmNameIndex, genreIndex, recommendationIndex);
-console.log(films);
+// console.log( typeof filmNameIndex);
+// console.log( typeof genreIndex);
+// console.log( typeof recommendationIndex);
+
+// already as sting
+function addFilm(){
+    localStorage.setItem(filmNameIndex, "filmName");
 }
+addFilm();
+
+
+function addGenre(){
+    localStorage.setItem(genreIndex, "Genre");
+}
+addGenre();
+
+
+
+function addRecommendation(){
+    localStorage.setItem(recommendationIndex, "Recommendation");
+}
+addRecommendation();
+
+}
+ 
+// let tableElement = document.getElementById('tableEl');
+ 
+// function tableFill(){
+//     for(let i = 0; i <films.length; i++) {
+//         let tdEl = document.createElement('td');
+
+//         tdEl.textContent = filmNameIndex;
+//     }
+// }
