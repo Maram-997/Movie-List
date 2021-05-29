@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    height: 40px;
+    border-bottom: 2px solid #EEE;
+    box-shadow:0 8px 6px -6px black ;
+}
+header h1{
+    text-align: center;
+}
+header h1 em{
+    color: #7F636E;
+}
+form{
+    width: 200px;
+    height: 600px;
+    margin-top: 20px;
+}
+#one, #two, #three, #four, #five {
+    width: 150px;
+}
+#imgContainer{
+    width: 100px;
+    height: 150px;
+}
