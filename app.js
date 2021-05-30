@@ -24,7 +24,8 @@ function addingName(event){
     new MoviesLocally (filmNameIndex, genreIndex, recommendationIndex);
     tableFill();
     addToLocalStorage();
-    console.log(films);
+    gettingFroimLocalStorage();
+
 
 }
 function tableFill(){
@@ -45,7 +46,6 @@ function tableFill(){
         tdEl2.textContent =recommendationIndex ;
     
 }
-console.log(typeof films);
 function addToLocalStorage()
 {
 let data = JSON.stringify(films);
@@ -55,13 +55,19 @@ localStorage.setItem('film', data);
 
 
 
+function gettingFroimLocalStorage()
+{
     
-    
-    
-    
-    
-    
-    
+  let locally =  localStorage.getItem('film');
+let converted = JSON.parse(locally);
+     if (converted!==null)
+     {
+           films = converted;
+     }
+     console.log(`Getted ${locally}`);
+
+    console.log(`converted ${converted}`);
+}
     
     
     
