@@ -1,5 +1,5 @@
 'use strict'
-
+// random img on a DIV
 
 let moviesArr = [];
 
@@ -23,7 +23,7 @@ let movie = ["atonement.jpg",
 for( let i =0; i < movie.length; i++){
     new Movies(movie[i]);
 }
-console.log(moviesArr);
+// console.log(moviesArr);
 
 function randomMovie(){
 return Math.floor(Math.random() * moviesArr.length)
@@ -37,12 +37,12 @@ function renderMovie(){
 
 renderMovie();
 
+// ends HERE
 
 
 
 
-
-
+// Add the input Movies from the form to LOCAL STORAGE
 
 let films = [];
 
@@ -50,7 +50,7 @@ let films = [];
 function MoviesLocally (filmName, genre, recommendation){
     this.filmName = filmName;
     this.genre = genre;
-    this.recommendation = recommendation;
+    this.recommendation = recommendation + ' out of Five';
 films.push(this);
 }
 
@@ -73,30 +73,50 @@ new MoviesLocally (filmNameIndex, genreIndex, recommendationIndex);
 // already as sting
 function addFilm(){
     localStorage.setItem(filmNameIndex, "filmName");
+    
+    filmNameIndex = "";
+
 }
 addFilm();
 
 
 function addGenre(){
     localStorage.setItem(genreIndex, "Genre");
+
+    genreIndex ="";
+
 }
 addGenre();
 
 
 
 function addRecommendation(){
-    localStorage.setItem(recommendationIndex, "Recommendation");
+    localStorage.setItem(recommendationIndex, "Recommendation");1
+
+    recommendationIndex = "";
+
 }
 addRecommendation();
 
+
+
+
 }
  
-// let tableElement = document.getElementById('tableEl');
- 
-// function tableFill(){
-//     for(let i = 0; i <films.length; i++) {
-//         let tdEl = document.createElement('td');
+// ends HERE
 
-//         tdEl.textContent = filmNameIndex;
-//     }
-// }
+// Generate the input Movies from the Form as table
+let tableElement = document.getElementById('tableEl');
+let trEl = document.getElementById('tr'); 
+function tableFill(){
+    for(let i = 0; i <films.length; i++) {
+
+        let trEl1 = document.createElement('tr');
+        trEl1.appendChild('trEl');
+        let tdEl = document.createElement('td')
+        tdEl.appendChild('trEl');
+        tdEl.textContent =films[i];
+
+    }
+}
+tableFill();
