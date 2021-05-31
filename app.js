@@ -22,9 +22,11 @@ function addingName(event){
      genreIndex = event.target.genre.value;
      recommendationIndex = document.getElementById('recommendation').value;
     new MoviesLocally (filmNameIndex, genreIndex, recommendationIndex);
+
+
     tableFill();
     addToLocalStorage();
-    gettingFroimLocalStorage();
+    gettingFromLocalStorage();
 
 
 }
@@ -55,7 +57,7 @@ localStorage.setItem('film', data);
 
 
 
-function gettingFroimLocalStorage()
+function gettingFromLocalStorage()
 {
     
   let locally =  localStorage.getItem('film');
@@ -64,9 +66,7 @@ let converted = JSON.parse(locally);
      {
            films = converted;
      }
-     console.log(`Getted ${locally}`);
-
-    console.log(`converted ${converted}`);
+   
 }
     
     
